@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "monocraft";
+    src: url("../assets/fonts/MONOCRAFT.TTC");
+}
 :root {
     --font-primary: "monocraft";
     --color-background: #bfa6a1;
@@ -6,10 +10,6 @@
     --button-bg: url("../assets/img/bgbtn.webp");
     --padding-standard: 1.2rem;
     --text-shadow: 2px 2px #000;
-}
-@font-face {
-    font-family: "monocraft";
-    src: url("../assets/fonts/MONOCRAFT.TTC");
 }
 *{
     font-family: "monocraft" !important;
