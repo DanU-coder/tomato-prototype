@@ -120,6 +120,12 @@ button{
     body{
         flex-direction: column;
     }
+    .pomo-page{
+        width: 50vw;
+    }
+    .pomo.container h1{
+        font-size: 4vw;
+    }
     button {
         padding: 0.8rem; /* Ajusta para dispositivos móviles */
         font-size: 0.875rem;
@@ -127,8 +133,18 @@ button{
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 800px){
     .pomo-page{
         width: 64vw;
+    }
+    .pomo.container h1{
+        font-size: 6vw;
+    }
+
+    button {
+        padding: 0.8rem; /* Ajusta para dispositivos móviles */
+        font-size: 0.875rem;
+        width: 16vw;
+        font-size: 6vw;
     }
 }
