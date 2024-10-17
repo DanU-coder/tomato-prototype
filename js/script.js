@@ -67,7 +67,7 @@ let timerCountdown = () => {
         ++counter
         increaseBtn.disabled = false
         decreaseBtn.disabled = false
-        time = remainingTime * 60
+        pomoButton.innerText = "⏵"
     }else if (counter % 2 == 0){
         counter = true
         clearInterval(time);
@@ -82,6 +82,7 @@ let timerCountdown = () => {
             
             increaseBtn.disabled = true
             decreaseBtn.disabled = true
+            pomoButton.innerText = "⏹"
 
             remainingTime = minutes * 60;
             pomoCounter.style.color = "#FFAA00";

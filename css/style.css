@@ -7,6 +7,10 @@
     --padding-standard: 1.2rem;
     --text-shadow: 2px 2px #000;
 }
+@font-face {
+    font-family: "monocraft";
+    src: url("../assets/fonts/MONOCRAFT.TTC");
+}
 *{
     font-family: "monocraft" !important;
     -webkit-tap-highlight-color: transparent;
@@ -85,6 +89,7 @@ button{
     cursor: pointer;
     display: inline-block;
     aspect-ratio: 1/1;
+    text-align: center;
     
     box-sizing: border-box;
     background-image: var(--button-bg);
