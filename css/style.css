@@ -6,7 +6,7 @@
     --font-primary: "monocraft";
     --color-background: #bfa6a1;
     --color-text: #DDD;
-    --color-shadow: #583831;
+    --color-shadow: #3c211b;
     --button-bg: url("../assets/img/bgbtn.webp");
     --padding-standard: 1.2rem;
     --text-shadow: 2px 2px #000;
@@ -30,7 +30,7 @@ body {
     justify-content: center;
     min-height: 100%; /* Asegura que siempre ocupe toda la pantalla */
     box-sizing: border-box;
-    background-image: url("https://minecraft.wiki/images/BlockSprite_spruce-planks.png?6696d");
+    background-image: url("https://minecraft.wiki/images/BlockSprite_dark-oak-planks.png?8e924");
     background-repeat: repeat;
     background-size: 10%;
     image-rendering: pixelated;
@@ -61,7 +61,7 @@ h1, h2, button {
     width: 32vw;
     aspect-ratio: 140 / 180; /* Mantén la relación de aspecto */
     box-sizing: content-box;
-    /* filter: drop-shadow(0 4px 16px var(--color-shadow)); */
+    filter: drop-shadow(0 4px 12px);
 
 } 
 .pomo.container{
@@ -71,6 +71,13 @@ h1, h2, button {
     align-items: center;
     justify-content:center;
     height: 100%;
+}
+#page-2{
+    justify-content: calc(32vh) !important;
+}
+.nxt-page{
+    background-image: url("../assets/img/nxt-page.png");
+    flex: 0;
 }
 .pomo.container h1{
     font-size: 1.44vw;

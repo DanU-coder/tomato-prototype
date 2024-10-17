@@ -7,14 +7,15 @@ const pomoHover = new Audio("./assets/sounds/spout_2.ogg")
 const endSound = new Audio("./assets/sounds/pomoXP.mp3")
 const tenSeg = new Audio("./assets/sounds/10-seg.mp3")
 const pomoCounter = document.getElementById("pomo-timer");
+const pomoButton = document.getElementById("pomo-button"); 
+const decreaseBtn = document.getElementById("pomo-decrease")
+const increaseBtn = document.getElementById("pomo-increase")
+const nxtPageBtn = document.querySelectorAll(".nxt-page")
 
 let counter = 0;
 let minutes = 25;
 let seconds = 0;
 let timer = "25:00";
-let pomoButton = document.getElementById("pomo-button"); 
-let decreaseBtn = document.getElementById("pomo-decrease")
-let increaseBtn = document.getElementById("pomo-increase")
 let time;
 let startTime; // Nuevo: para almacenar la hora de inicio
 let remainingTime; // Nuevo: para almacenar el tiempo restante en segundos
@@ -24,6 +25,16 @@ buttons.forEach(button => {
     button.addEventListener("click", () => {
         tenSeg.currentTime = 0;
         tenSeg.play()
+    })
+})
+
+nxtPageBtn.forEach(nxtPageBtn => {
+    const bgOriginal = nxtPageBtn.style.backgroundImage;
+    nxtPageBtn.addEventListener("mouseenter", () => {
+        nxtPageBtn.style.backgroundImage = "url('./assets/img/nxt-page-hover.png')"
+    })
+    nxtPageBtn.addEventListener("mouseleave", () => {
+        nxtPageBtn.style.backgroundImage = bgOriginal
     })
 })
 const updateDisplay = () => {
