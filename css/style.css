@@ -15,11 +15,15 @@
     font-family: "monocraft" !important;
     -webkit-tap-highlight-color: transparent;
 }
+html{
+    height: 100%;
+}
 
 body {
     font-family: var(--font-primary);
     background-color: var(--color-background);
-    margin: 2vh;
+    margin: 0;
+    
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,6 +34,7 @@ body {
     background-repeat: repeat;
     background-size: 10%;
     image-rendering: pixelated;
+    box-sizing: content-box;
 }
 
 h1, h2, button {
