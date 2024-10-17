@@ -23,7 +23,7 @@ body {
     font-family: var(--font-primary);
     background-color: var(--color-background);
     margin: 0;
-    
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -119,12 +119,6 @@ button{
 @media (max-width: 1024px) {
     body{
         flex-direction: column;
-    }
-    main {
-        padding: 2rem; /* Reducir padding para pantallas más pequeñas */
-        height: 60vw; /* Ajuste para mejor adaptación */
-        margin: 3.2 rem;
-        font-size: 14px;   
     }
     button {
         padding: 0.8rem; /* Ajusta para dispositivos móviles */
