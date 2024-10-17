@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="assets/img/pomo.ico" type="image/icon">
+    <style>
+        @font-face {
+            font-family: "PP Pangram Sans";
+            src: url(assets/fonts/PPPangramSansRounded-Bold.otf);
+        }
+    </style>
+    
+    <title>Pomo Pomo</title>
+</head>
+<body>
+    <main>
+        <div id="pomo-book">
+            <div class="pomo-page">
+                <div class="pomo container">
+                    <h1>¡Pomodoro en Construcción!</h1>
+                    <div id="pomo-timer"></div>
+                    <div id="pomo-buttons-container">
+                        <button id="pomo-decrease">↓</button>
+                        <button id="pomo-button" onclick="timerCountdown();" onmouseover="pomoHover.play()">
+                            <img id="pomo-button-icon" src="assets/img/tomato.png" alt="">
+                        </button>
+                        <button id="pomo-increase">↑</button>
+                    </div> 
+                </div>
+            </div>
+            <!-- <div class="pomo-page">
+                <div class="pomo container">
+                    <h1>To-Do List</h1>
+                </div>
+            </div> -->
+        </div>
+    </main>
+    <aside>
+        <div class="playlist container">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3Nnu11k6ZW8iHmn4YPw8b3?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </aside>
+    <script src="js/script.js"></script>
+</body>
+</html>

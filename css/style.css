@@ -1,0 +1,122 @@
+:root {
+    --font-primary: "monocraft";
+    --color-background: #bfa6a1;
+    --color-text: #DDD;
+    --color-shadow: #583831;
+    --button-bg: url("../assets/img/bgbtn.webp");
+    --padding-standard: 1.2rem;
+    --text-shadow: 2px 2px #000;
+}
+*{
+    font-family: "monocraft" !important;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    margin: 2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh; /* Asegura que siempre ocupe toda la pantalla */
+    box-sizing: border-box;
+    background-image: url("https://minecraft.wiki/images/BlockSprite_spruce-planks.png?6696d");
+    background-repeat: repeat;
+    background-size: 10%;
+    image-rendering: pixelated;
+}
+
+h1, h2, button {
+    font-weight: normal;
+    text-align: center;
+}
+
+/* Main styling */
+#pomo-book{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    filter: drop-shadow(0 4px 16px var(--color-shadow));
+}
+.pomo-page {
+    
+    background-image: url("../assets/img/bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
+    height: 32vw;
+    aspect-ratio: 140 / 180; /* Mantén la relación de aspecto */
+    box-sizing: content-box;
+    /* filter: drop-shadow(0 4px 16px var(--color-shadow)); */
+
+} 
+.pomo.container{
+    /* padding: 1rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    height: 100%;
+}
+.pomo.container h1{
+    font-size: 1.64vw;
+}
+
+iframe {
+    filter: drop-shadow(0 4px 16px var(--color-shadow));
+}
+#pomo-buttons-container{
+    display: flex;
+    flex-direction: row;
+    
+}
+/* Button styling */
+button{
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: 0;
+    width: 5vw;
+    cursor: pointer;
+    display: inline-block;
+    aspect-ratio: 1/1;
+    
+    box-sizing: border-box;
+    background-image: var(--button-bg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.42vw;
+    
+}
+#pomo-button-icon{
+    filter: drop-shadow(2px 1px 1.5px #000);
+    aspect-ratio: 1/1;
+    width: 63%;
+    transform: translateY(2px);
+}
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    body{
+        flex-direction: column;
+    }
+    main {
+        padding: 2rem; /* Reducir padding para pantallas más pequeñas */
+        height: 60vw; /* Ajuste para mejor adaptación */
+        margin: 3.2 rem;
+        font-size: 14px;   
+    }
+    button {
+        padding: 0.8rem; /* Ajusta para dispositivos móviles */
+        font-size: 0.875rem;
+    }
+}
+
