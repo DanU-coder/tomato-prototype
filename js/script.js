@@ -19,21 +19,6 @@ let time;
 let startTime; // Nuevo: para almacenar la hora de inicio
 let remainingTime; // Nuevo: para almacenar el tiempo restante en segundos
 
-window.onSpotifyWebPlaybackSDKReady = () => {
-    const token = 'YOUR_ACCESS_TOKEN'; // Necesitas autenticar al usuario
-    const player = new Spotify.Player({
-        name: 'Web Playback SDK Quick Start Player',
-        getOAuthToken: cb => { cb(token); }
-    });
-
-    // Conectar el player
-    player.connect();
-
-    // Play/Pause ejemplo:
-    pomoButton.addEventListener("click", () => {
-        player.togglePlay();
-    });
-};
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
