@@ -27,7 +27,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     min-height: 100%; /* Asegura que siempre ocupe toda la pantalla */
     box-sizing: border-box;
     background-image: url("https://minecraft.wiki/images/BlockSprite_spruce-planks.png?6696d");
