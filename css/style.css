@@ -109,11 +109,8 @@ button{
     font-size: 1.42vw;
     
 }
-#pomo-button-icon{
-    filter: drop-shadow(2px 1px 1.5px #000);
-    aspect-ratio: 1/1;
-    width: 63%;
-    transform: translateY(2px);
+.pomo.container *{
+    text-shadow: #f4e0d4 0px 2px 0px;
 }
 /* Responsive adjustments */
 @media (max-width: 1024px) {
@@ -124,7 +121,7 @@ button{
         width: 50vw;
     }
     .pomo.container h1{
-        font-size: 4vw;
+        font-size: 3vw;
     }
     button {
         padding: 0.8rem; /* Ajusta para dispositivos móviles */

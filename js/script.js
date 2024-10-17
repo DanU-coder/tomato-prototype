@@ -83,7 +83,7 @@ let timerCountdown = () => {
                 // Calcula el tiempo restante real en base a la diferencia de tiempo
                 remainingTime = Math.max(Math.round((endTime - now) / 1000), 0);
     
-                if (remainingTime <= 5 && remainingTime > 0) {
+                if (remainingTime <= 10 && remainingTime > 0) {
                     tenSeg.play();
                 }
     
