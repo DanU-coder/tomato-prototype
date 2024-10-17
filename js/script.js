@@ -40,6 +40,7 @@ let decreaseTime = () =>{
     minutes > 0 ? minutes -= 5 : alert("No se puede retroceder más.");
     updateDisplay();
 }
+
 decreaseBtn.addEventListener("click", decreaseTime)
 increaseBtn.addEventListener("click", increaseTime)
 updateDisplay();
@@ -102,3 +103,4 @@ let timerCountdown = () => {
     }
 
 }
+pomoButton.addEventListener("click", timerCountdown)

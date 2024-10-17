@@ -42,7 +42,7 @@ h1, h2, button {
     display: flex;
     flex-direction: row;
     align-items: center;
-    
+    height: 100%;
     filter: drop-shadow(0 4px 16px var(--color-shadow));
 }
 .pomo-page {
@@ -52,7 +52,8 @@ h1, h2, button {
     background-repeat: no-repeat;
     background-size: contain;
     image-rendering: pixelated;
-    height: 32vw;
+    /* height: 32vw; */
+    width: 32vw;
     aspect-ratio: 140 / 180; /* Mantén la relación de aspecto */
     box-sizing: content-box;
     /* filter: drop-shadow(0 4px 16px var(--color-shadow)); */
@@ -123,6 +124,12 @@ button{
     button {
         padding: 0.8rem; /* Ajusta para dispositivos móviles */
         font-size: 0.875rem;
+        width: 7vw;
     }
 }
 
+@media (max-width: 768px){
+    .pomo-page{
+        width: 64vw;
+    }
+}
