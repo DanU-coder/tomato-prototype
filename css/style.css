@@ -73,12 +73,13 @@ h1, h2, button {
     height: 100%;
 }
 .pomo.container h1{
-    font-size: 1.64vw;
+    font-size: 1.44vw;
+}
+#pomo-timer h2{
+    font-size: 1.37vw;
+    padding: 4px;
 }
 
-iframe {
-    filter: drop-shadow(0 4px 16px var(--color-shadow));
-}
 #pomo-buttons-container{
     display: flex;
     flex-direction: row;
@@ -113,6 +114,11 @@ button{
     text-shadow: #f4e0d4 0px 2px 0px;
 }
 /* Responsive adjustments */
+@media (max-screen:1200px) {
+    #pomo-timer{
+        font-size: 100%;
+    }
+}
 @media (max-width: 1024px) {
     body{
         flex-direction: column;
