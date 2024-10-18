@@ -135,8 +135,13 @@ button{
         width: 50vw;
     }
     .pomo.container h1{
-        font-size: 3.5vw;
+        font-size: 2.5vw;
     }
+    
+    #pomo-timer h2{
+        font-size: 3vw !important;
+    }
+
     button {
         padding: 0.8rem; /* Ajusta para dispositivos móviles */
         font-size: 0.875rem;
@@ -148,8 +153,11 @@ button{
     .pomo-page{
         width: 75vw;
     }
+    .pomo.container h1{
+        font-size: 3.5vw;
+    }
     #pomo-timer h2{
-        font-size: 6vw !important;
+        font-size: 4.5vw !important;
     }
 
     button {
@@ -164,16 +172,16 @@ button{
         width: 90vw !important;
     }
     .pomo.container h1{
-        font-size: 5.4vw;
+        font-size: 6.2vw;
     }
     #pomo-timer h2{
-        font-size: 6vw !important;
+        font-size: 6.4vw !important;
     }
 
     button {
         padding: 0.8rem; /* Ajusta para dispositivos móviles */
         font-size: 0.875rem;
-        width: 12vw;
+        width: 14vw;
         font-size: 6vw;
     }
 }
