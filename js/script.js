@@ -42,7 +42,7 @@ const updateDisplay = () => {
     let formattedMinutes = String(isBreak ? breakMinutes : workMinutes).padStart(2, '0');
     let formattedSeconds = String(seconds).padStart(2, '0');
     pomoCounter.innerHTML = `<h2>${formattedMinutes}:${formattedSeconds}</h2>`;
-    breakMinutes = workMinutes >= 30 ? 10 : workMinutes / 5;
+
     if(workMinutes <= 35){
         breakMinutes = 5;
     }else if(workMinutes <= 45){
@@ -50,7 +50,7 @@ const updateDisplay = () => {
     }else{
         breakMinutes = 15;
     }
-    nxtTimePreview.innerHTML = `${breakMinutes} ${breakMinutes > 1 ? "Minutos" : "Minuto"}`
+    nxtTimePreview.innerHTML = `Tiempo de Descanso <b>${breakMinutes} ${breakMinutes > 1 ? "Minutos" : "Minuto"}</b> <br> <u> yeah</u>`
 };
 
 const textColorFormatter = () => {
