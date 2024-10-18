@@ -122,12 +122,8 @@ button{
     text-shadow: #f4e0d4 0px 2px 0px;
 }
 /* Responsive adjustments */
-@media (max-screen:1200px) {
-    #pomo-timer{
-        font-size: 100%;
-    }
-}
-@media (max-width: 1024px) {
+
+@media (max-width: 1100px) {
     body{
         flex-direction: column;
     }
