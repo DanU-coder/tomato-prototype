@@ -74,6 +74,7 @@ h1, h2, button {
 }
 #page-2{
     justify-content: calc(32vh) !important;
+    display: none;
 }
 .nxt-page{
     background-image: url("../assets/img/nxt-page.png");
@@ -83,7 +84,7 @@ h1, h2, button {
     font-size: 1.44vw;
 }
 #pomo-timer h2{
-    font-size: 1.37vw;
+    font-size: 1.44vw;
     padding: 4px;
 }
 
@@ -134,7 +135,7 @@ button{
         width: 50vw;
     }
     .pomo.container h1{
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
     button {
         padding: 0.8rem; /* Ajusta para dispositivos móviles */
@@ -147,14 +148,14 @@ button{
     .pomo-page{
         width: 64vw;
     }
-    .pomo.container h1{
-        font-size: 6vw;
+    #pomo-timer h2{
+        font-size: 4vw !important;
     }
 
     button {
         padding: 0.8rem; /* Ajusta para dispositivos móviles */
         font-size: 0.875rem;
-        width: 16vw;
+        width: 10vw;
         font-size: 6vw;
     }
 }
