@@ -70,7 +70,7 @@ h1, h2, button {
 }
 #page-2 .pomo.container{
     justify-content: space-around;
-    margin-top: 6rem;
+    margin: 6rem 2rem;
 }
 
 .container{
