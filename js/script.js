@@ -94,8 +94,8 @@ updateDisplay();
 
 const counterFinalized = () => {
     pomoButton.innerText = "⏵"; // Cambia el botón a play cuando termina
-    pomoCounter.style.color = isBreak ? "#00B300" : "#971607"; // Verde para descanso, rojo para trabajo
-    pomoCounter.innerHTML = `<h2>${isBreak ? "Descanso" : "finalizado"}</h2>`;
+    pomoCounter.style.color = isBreak ? "#971607" : "#00B300"; // Verde para descanso, rojo para trabajo
+    pomoCounter.innerHTML = `<h2>${isBreak ? "Finalizado" : "Descanso"}</h2>`;
     isRunning = false;
     increaseBtn.disabled = false;
     decreaseBtn.disabled = false;
@@ -105,7 +105,7 @@ const counterFinalized = () => {
 let startBreak = () => {
     isBreak = true; // Cambia a estado de descanso
     remainingTime = breakMinutes * 60; // Establece el tiempo de descanso
-    pomoCounter.style.color = "#00B300"; // Cambia el color a verde
+    pomoCounter.style.color = "#00AAAA"; // Cambia el color a verde
     pomoCounter.innerHTML = `<h2>Descanso</h2>`;
     pomoButton.innerText = "⏹"; // Cambia el botón a detener
     startTime = Date.now();
@@ -144,6 +144,8 @@ let timerCountdown = () => {
         // Si el temporizador ya está ejecutándose, deténlo
         clearInterval(time);
         counterFinalized();
+        pomoCounter.style.color = "#971607"
+        pomoCounter.innerHTML = "<h2>Finalizado</h2>"
         endSound.play();
         return;
     }
