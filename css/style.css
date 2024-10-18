@@ -91,6 +91,9 @@ h1, h2, button {
     background-image: url("../assets/img/nxt-page.png");
     flex: 0;
 }
+#page-2 .nxt-page{
+    transform: scaleX(-1);
+}
 .pomo.container h1{
     font-size: 1.44vw;
 }
@@ -134,6 +137,10 @@ button{
 }
 u{
     text-shadow: none !important;
+}
+ul li{
+    list-style:square;
+    text-shadow: none;
 }
 /* Responsive adjustments */
 

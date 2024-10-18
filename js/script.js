@@ -72,18 +72,18 @@ const updateDisplay = () => {
 
     if(workMinutes <= 30){
         breakMinutes = 5;
-        comment = "Buen tiempo de estudio."
+        comment = "Un estudio Ideal."
         nxtTimePreview.style.color = "#00AA00"
         
-    }else if(workMinutes <= 50){
+    }else if(workMinutes <= 55){
         breakMinutes = 10;
-        comment = "Hay que esforzarnos un poco."
+        comment = "Bueno para la concentración."
         nxtTimePreview.style.color = "#0000AA"
-    }else if(workMinutes <= 75){
+    }else if(workMinutes <= 80){
         breakMinutes = 15;
-        comment = "Vamos a ponernos serios."
+        comment = "A ponerse serios."
         nxtTimePreview.style.color = "#B4684D"
-    }else if(workMinutes <= 90){
+    }else if(workMinutes <= 110){
         breakMinutes = 25;
         comment = "!Hay que aprobar esas materias!"
         nxtTimePreview.style.color = "#443A3B"
