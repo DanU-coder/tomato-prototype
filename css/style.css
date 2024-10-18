@@ -146,16 +146,31 @@ button{
 
 @media (max-width: 800px){
     .pomo-page{
-        width: 64vw;
+        width: 75vw;
     }
     #pomo-timer h2{
-        font-size: 4vw !important;
+        font-size: 6vw !important;
     }
 
     button {
         padding: 0.8rem; /* Ajusta para dispositivos móviles */
         font-size: 0.875rem;
-        width: 10vw;
+        width: 12vw;
+        font-size: 6vw;
+    }
+}
+@media (max-width: 600px){
+    .pomo-page{
+        width: 90vw !important;
+    }
+    #pomo-timer h2{
+        font-size: 6vw !important;
+    }
+
+    button {
+        padding: 0.8rem; /* Ajusta para dispositivos móviles */
+        font-size: 0.875rem;
+        width: 12vw;
         font-size: 6vw;
     }
 }
