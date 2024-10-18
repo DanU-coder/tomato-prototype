@@ -51,7 +51,6 @@ h1, h2, button {
     filter: drop-shadow(0 4px 16px var(--color-shadow));
 }
 .pomo-page {
-    
     background-image: url("../assets/img/bg.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -63,7 +62,17 @@ h1, h2, button {
     box-sizing: content-box;
     filter: drop-shadow(0 4px 12px);
 
-} 
+}
+#page-2{
+    display: none;
+    background-image: url("../assets/img/clipboard.png");
+    aspect-ratio: 206 / 253;
+}
+#page-2 .pomo.container{
+    justify-content: space-around;
+    margin-top: 6rem;
+}
+
 .container{
     display: flex;
     align-items: center;
@@ -77,10 +86,6 @@ h1, h2, button {
     align-items: center;
     justify-content:center;
     height: 100%;
-}
-#page-2{
-    justify-content: calc(32vh) !important;
-    display: none;
 }
 .nxt-page{
     background-image: url("../assets/img/nxt-page.png");

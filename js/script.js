@@ -9,6 +9,8 @@ const pomoButton = document.getElementById("pomo-button");
 const decreaseBtn = document.getElementById("pomo-decrease");
 const increaseBtn = document.getElementById("pomo-increase");
 const nxtPageBtn = document.querySelectorAll(".nxt-page");
+const pageOne = document.getElementById("page-1")
+const pageTwo = document.getElementById("page-2")
 
 let counter = 0;
 let workMinutes = 25; // Duración de trabajo
@@ -21,6 +23,7 @@ let remainingTime;
 let isRunning = false; // Para saber si el temporizador está en ejecución
 let isBreak = false; // Para saber si estamos en tiempo de descanso
 let comment;
+let pageDisplay = true
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -28,6 +31,29 @@ buttons.forEach(button => {
         tenSeg.play();
     });
 });
+
+
+
+nxtPageBtn.forEach(nxtPageBtn =>{
+    nxtPageBtn.addEventListener("click", () =>{
+        if(pageDisplay || !pageDisplay){
+            pageDisplay = !pageDisplay
+            if(pageDisplay == true){
+                pageOne.style.display = "block"
+                pageTwo.style.display = "none"
+            }else if (pageDisplay == false){
+                pageOne.style.display = "none"
+                pageTwo.style.display = "block"
+            }
+        }
+    })
+})
+
+
+
+
+//Cambio de Página
+
 
 nxtPageBtn.forEach(nxtPageBtn => {
     const bgOriginal = nxtPageBtn.style.backgroundImage;
@@ -47,19 +73,24 @@ const updateDisplay = () => {
     if(workMinutes <= 30){
         breakMinutes = 5;
         comment = "Buen tiempo de estudio."
+        nxtTimePreview.style.color = "#00AA00"
         
     }else if(workMinutes <= 50){
         breakMinutes = 10;
         comment = "Hay que esforzarnos un poco."
+        nxtTimePreview.style.color = "#0000AA"
     }else if(workMinutes <= 75){
         breakMinutes = 15;
         comment = "Vamos a ponernos serios."
+        nxtTimePreview.style.color = "#B4684D"
     }else if(workMinutes <= 90){
         breakMinutes = 25;
         comment = "!Hay que aprobar esas materias!"
+        nxtTimePreview.style.color = "#443A3B"
     }else{
         breakMinutes = 30;
-        comment = '¿Qué es :"vida social"?'
+        comment = '¿Qué es "vida social"?'
+        nxtTimePreview.style.color = "#AA0000"
     }
     nxtTimePreview.innerHTML = `Tiempo de Descanso <b>${breakMinutes} ${breakMinutes > 1 ? "Minutos" : "Minuto"}</b> <br> <u>${comment}</u>`
 };
@@ -94,7 +125,7 @@ updateDisplay();
 
 const counterFinalized = () => {
     pomoButton.innerText = "⏵"; // Cambia el botón a play cuando termina
-    pomoCounter.style.color = isBreak ? "#971607" : "#00B300"; // Verde para descanso, rojo para trabajo
+    pomoCounter.style.color = isBreak ? "#AA0000" : "#00AA00"; // Verde para descanso, rojo para trabajo
     pomoCounter.innerHTML = `<h2>${isBreak ? "Finalizado" : "Descanso"}</h2>`;
     isRunning = false;
     increaseBtn.disabled = false;
