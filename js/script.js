@@ -55,7 +55,11 @@ let decreaseTime = () =>{
 decreaseBtn.addEventListener("click", decreaseTime)
 increaseBtn.addEventListener("click", increaseTime)
 updateDisplay();
-
+const counterFinalized = ()=>{
+    pomoButton.innerText = "⏵"
+    pomoCounter.style.color = "#971607"
+    pomoCounter.innerHTML = `<h2>finalizado</h2>`;
+}
 
 let timerCountdown = () => {
     tenSeg.play()
@@ -64,7 +68,7 @@ let timerCountdown = () => {
         ++counter
         increaseBtn.disabled = false
         decreaseBtn.disabled = false
-        pomoButton.innerText = "⏵"
+        counterFinalized()
     }else if (counter % 2 == 0){
         counter = true
         clearInterval(time);
@@ -107,6 +111,7 @@ let timerCountdown = () => {
                 if (remainingTime <= 0) {
                     clearInterval(time);
                     pomoCounter.innerHTML = `<h2>00:00</h2>`;
+                    counterFinalized()
                     endSound.play();
                 }
             }, 1000);
