@@ -163,6 +163,9 @@ button{
     .pomo-page{
         width: 90vw !important;
     }
+    .pomo.container h1{
+        font-size: 5.4vw;
+    }
     #pomo-timer h2{
         font-size: 6vw !important;
     }
