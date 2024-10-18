@@ -30,7 +30,7 @@ buttons.forEach(button => {
 
 nxtPageBtn.forEach(nxtPageBtn => {
     const bgOriginal = nxtPageBtn.style.backgroundImage;
-    nxtPageBtn.addEventListener("mouseenter", () => {
+    nxtPageBtn.addEventListener("mouseover", () => {
         nxtPageBtn.style.backgroundImage = "url('./assets/img/nxt-page-hover.png')"
     })
     nxtPageBtn.addEventListener("mouseleave", () => {
