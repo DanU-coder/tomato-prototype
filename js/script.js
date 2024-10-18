@@ -20,6 +20,7 @@ let startTime;
 let remainingTime;
 let isRunning = false; // Para saber si el temporizador está en ejecución
 let isBreak = false; // Para saber si estamos en tiempo de descanso
+let comment;
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -43,14 +44,24 @@ const updateDisplay = () => {
     let formattedSeconds = String(seconds).padStart(2, '0');
     pomoCounter.innerHTML = `<h2>${formattedMinutes}:${formattedSeconds}</h2>`;
 
-    if(workMinutes <= 35){
+    if(workMinutes <= 30){
         breakMinutes = 5;
-    }else if(workMinutes <= 45){
+        comment = "Buen tiempo de estudio."
+        
+    }else if(workMinutes <= 50){
         breakMinutes = 10;
-    }else{
+        comment = "Hay que esforzarnos un poco."
+    }else if(workMinutes <= 75){
         breakMinutes = 15;
+        comment = "Vamos a ponernos serios."
+    }else if(workMinutes <= 90){
+        breakMinutes = 25;
+        comment = "!Hay que aprobar esas materias!"
+    }else{
+        breakMinutes = 30;
+        comment = '¿Qué es :"vida social"?'
     }
-    nxtTimePreview.innerHTML = `Tiempo de Descanso <b>${breakMinutes} ${breakMinutes > 1 ? "Minutos" : "Minuto"}</b> <br> <u> yeah</u>`
+    nxtTimePreview.innerHTML = `Tiempo de Descanso <b>${breakMinutes} ${breakMinutes > 1 ? "Minutos" : "Minuto"}</b> <br> <u>${comment}</u>`
 };
 
 const textColorFormatter = () => {
@@ -62,7 +73,8 @@ const textColorFormatter = () => {
 let increaseTime = () => {
     if (!isRunning) { // Solo permite cambiar tiempo si no está en ejecución
         textColorFormatter();
-        workMinutes += 5;
+        workMinutes < 120 ? workMinutes += 5 : alert("¡No te excedas con el estudio!.");
+
         
         updateDisplay();
     }
@@ -100,10 +112,12 @@ let startBreak = () => {
     const endTime = startTime + remainingTime * 1000;
 
     time = setInterval(function () {
+        decreaseBtn.disabled = true;
+        increaseBtn.disabled = true;
         const now = Date.now();
         remainingTime = Math.max(Math.round((endTime - now) / 1000), 0);
 
-        if (remainingTime <= 10 && remainingTime > 0) {
+        if (remainingTime <= 5 && remainingTime > 0) {
             tenSeg.play();
         }
 
@@ -115,6 +129,8 @@ let startBreak = () => {
 
         if (remainingTime <= 0) {
             clearInterval(time);
+            decreaseBtn.disabled = false;
+            increaseBtn.disabled = false;
             pomoCounter.innerHTML = `<h2>00:00</h2>`;
             counterFinalized();
             endSound.play();
