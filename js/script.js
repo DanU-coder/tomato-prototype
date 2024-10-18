@@ -42,12 +42,19 @@ const updateDisplay = () => {
     let formattedSeconds = String(seconds).padStart(2, '0');
     pomoCounter.innerHTML = `<h2>${formattedMinutes}:${formattedSeconds}</h2>`;
 };
+const textColorFormatter = () =>{
+    if(pomoCounter.style.color != "#000"){
+        pomoCounter.style.color = "#000"
+    }
+}
 
 let increaseTime = () =>{
+    textColorFormatter()
     minutes += 5
     updateDisplay();
 }
 let decreaseTime = () =>{
+    textColorFormatter()
     minutes > 0 ? minutes -= 5 : alert("No se puede retroceder más.");
     updateDisplay();
 }
