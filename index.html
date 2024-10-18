@@ -10,32 +10,38 @@
     <title>Pomo Pomo</title>
 </head>
 <body>
-        <main>
-            <!-- Timer Page -->
-            <div id="pomo-book">
-                <div class="pomo-page" id="page-1"  >
-                    <div class="pomo container">
-                        <h1>Lil Tomato timer</h1>
-                        <div id="pomo-timer"></div>
-                        <div id="pomo-buttons-container">
-                            <button id="pomo-decrease">↓</button>
-                            <button id="pomo-button">⏵</button>
-                            <button id="pomo-increase">↑</button>
-                        </div> 
-                        <button class="nxt-page"></button>
+    <!-- Timer Page -->
+    <div class="desk-item">
+        <div id="pomo-book">
+            <div class="pomo-page" id="page-1">
+                <section class="pomo container">
+                    <h1>Lil Tomato timer</h1>
+                    <div id="pomo-timer"></div>
+                    <div id="pomo-buttons-container">
+                        <button id="pomo-decrease" aria-label="decrease timer">↓</button>
+                        <button id="pomo-button" aria-label="start timer">⏵</button>
+                        <button id="pomo-increase" aria-label="increase timer">↑</button>
                     </div>
-                </div>
-                <!-- Tasks Page -->
-                <div class="pomo-page" id="page-2">
-                    <div class="pomo container">
-                        <h1>Pendientes</h1>
-                        <p>Lorem Ipsum Dolor Sit...</p>
-                        <button class="nxt-page"></button>
-                    </div>
-                </div>
+                    <button class="nxt-page" aria-label="next page"></button>
+                    <span style="display: flex; flex-direction: column; justify-content: center; align-items: center;">Tiempo de Descanso: <b id = "break-preview">hola</b></span>
+                </section>
             </div>
-        </main>
-    <script src="js/script.js"></script>
+            
+            <!-- Tasks Page -->
+            <div class="pomo-page" id="page-2">
+                <section class="pomo container">
+                    <h1>Pendientes</h1>
+                    <p>Lorem Ipsum Dolor Sit...</p>
+                </section>
+                <section class="container">
+                    <button class="nxt-page" aria-label="next page"></button>
+                    <iframe src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0" 
+                        width="100%" height="352px" frameborder="0" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js" defer></script>
 </body>
 </html>
-    
