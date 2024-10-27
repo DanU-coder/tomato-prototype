@@ -22,6 +22,7 @@ let startTime;
 let remainingTime;
 let isRunning = false; // Para saber si el temporizador está en ejecución
 let isBreak = false; // Para saber si estamos en tiempo de descanso
+let ifPaused = false;
 let comment;
 let pageDisplay = true
 
@@ -123,6 +124,15 @@ decreaseBtn.addEventListener("click", decreaseTime);
 increaseBtn.addEventListener("click", increaseTime);
 updateDisplay();
 
+const counterPaused = () => {
+    pomoButton.innerText = "⏵"; // Cambia el botón a play cuando termina
+    pomoCounter.style.color = isBreak ? "#AA0000" : "#00AA00"; // Verde para descanso, rojo para trabajo
+    isRunning = false;
+    increaseBtn.disabled = false;
+    decreaseBtn.disabled = false;
+    counter = 0; // Restablecer counter para evitar problemas de doble clic
+};
+
 const counterFinalized = () => {
     pomoButton.innerText = "⏵"; // Cambia el botón a play cuando termina
     pomoCounter.style.color = isBreak ? "#AA0000" : "#00AA00"; // Verde para descanso, rojo para trabajo
@@ -138,7 +148,7 @@ let startBreak = () => {
     remainingTime = breakMinutes * 60; // Establece el tiempo de descanso
     pomoCounter.style.color = "#00AAAA"; // Cambia el color a verde
     pomoCounter.innerHTML = `<h2>Descanso</h2>`;
-    pomoButton.innerText = "⏹"; // Cambia el botón a detener
+    pomoButton.innerText = "⏸️"; // Cambia el botón a detener
     startTime = Date.now();
     const endTime = startTime + remainingTime * 1000;
 
@@ -158,6 +168,9 @@ let startBreak = () => {
 
         pomoCounter.innerHTML = `<h2>${formattedTime}</h2>`;
 
+        if (remainingTime <= 5 && remainingTime > 0) {
+            tenSeg.play();
+        }
         if (remainingTime <= 0) {
             clearInterval(time);
             decreaseBtn.disabled = false;
@@ -172,7 +185,6 @@ let startBreak = () => {
 
 let timerCountdown = () => {
     if (isRunning) {
-        // Si el temporizador ya está ejecutándose, deténlo
         clearInterval(time);
         counterFinalized();
         pomoCounter.style.color = "#971607"
@@ -195,7 +207,7 @@ let timerCountdown = () => {
     } else {
         increaseBtn.disabled = true;
         decreaseBtn.disabled = true;
-        pomoButton.innerText = "⏹";
+        pomoButton.innerText = "⏸️";
         isRunning = true; // Actualizar el estado del temporizador
 
         remainingTime = workMinutes * 60;
@@ -209,7 +221,7 @@ let timerCountdown = () => {
             const now = Date.now();
             remainingTime = Math.max(Math.round((endTime - now) / 1000), 0);
 
-            if (remainingTime <= 10 && remainingTime > 0) {
+            if (remainingTime <= 5 && remainingTime > 0) {
                 tenSeg.play();
             }
 

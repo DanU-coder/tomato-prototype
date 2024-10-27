@@ -6,6 +6,8 @@
     <link rel="icon" href="assets/img/pomo.ico" type="image/icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Pomo Pomo</title>
 </head>
@@ -50,6 +52,13 @@
         
             <iframe style="border-radius:12px; margin-top: 1.6rem;" src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator" width="auto" height="auto" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
+    <script>
+        gsap.registerPlugin(Draggable);
+        Draggable.create(".pomo-page",{
+            allowEventDefault: true
+        });
+        Draggable.create(".spotify-embed-container");
+    </script>
     <script src="./js/script.js" defer></script>
 </body>
 </html>
