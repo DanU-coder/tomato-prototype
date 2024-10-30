@@ -1,7 +1,10 @@
+/* Fuentes */
 @font-face {
     font-family: "monocraft";
     src: url("../assets/fonts/MONOCRAFT.TTC");
 }
+
+/* Variables globales */
 :root {
     --font-primary: "monocraft";
     --color-background: #bfa6a1;
@@ -11,208 +14,166 @@
     --padding-standard: 1.2rem;
     --text-shadow: 2px 2px #000;
 }
-*{
-    font-family: "monocraft" !important;
+
+/* Reset y estilos generales */
+* {
+    font-family: var(--font-primary) !important;
     -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
 }
-html{
+
+html, body {
     height: 100%;
+    margin: 0;
 }
 
 body {
-    font-family: var(--font-primary);
-    background-color: var(--color-background);
-    margin: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%; /* Asegura que siempre ocupe toda la pantalla */
-    box-sizing: border-box;
     background-image: url("https://minecraft.wiki/images/BlockSprite_dark-oak-planks.png?8e924");
     background-repeat: repeat;
     background-size: 10%;
     image-rendering: pixelated;
-    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+
+    margin: 2%;
 }
 
+/* Tipografía y sombra de texto */
 h1, h2, button {
     font-weight: normal;
     text-align: center;
 }
 
-/* Main styling */
-#pomo-book{
+/* Elementos principales */
+
+.desk-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* height: 100%; */
     filter: drop-shadow(0 4px 16px var(--color-shadow));
 }
 
-.pomo-page {
-    background-image: url("../assets/img/bg.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    image-rendering: pixelated;
-    /* height: 32vw; */
-    width: 32vw;
-    aspect-ratio: 140 / 180; /* Mantén la relación de aspecto */
-    box-sizing: content-box;
-    filter: drop-shadow(0 4px 12px);
-
-}
-#page-2{
-    display: none;
-    background-image: url("../assets/img/clipboard.png");
-    aspect-ratio: 206 / 253;
-}
-#page-2 .pomo.container{
-    justify-content: space-around;
-    margin: 2rem 0.4rem;
-}
-
-.container{
+/* Contenedores */
+.pomo-container {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    height: auto;
+    width: 32vw;
+    aspect-ratio: 140 / 180;
+    background-image: url("../assets/img/bg.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain    ;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 4px 12px);
+    padding: 32px;
 }
-.pomo.container{
-    /* padding: 1rem; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    height: 100%;
+.pomo-container *{
+    text-shadow: #f4e0d4 0px 2px 0px;
 }
-.nxt-page{
-    background-image: url("../assets/img/nxt-page.png");
-    flex: 0;
-}
-#page-2 .nxt-page{
-    transform: scaleX(-1);
-}
-.pomo.container h1{
+
+
+/* Texto en contenedores */
+.pomo.container h1 {
     font-size: 1.44vw;
 }
-#pomo-timer h2{
+
+#pomo-timer h2 {
     font-size: 1.44vw;
     padding: 4px;
 }
 
-#pomo-buttons-container{
+#pomo-btn-box {
     display: flex;
     flex-direction: row;
-    
+    justify-content: space-between;
 }
-/* Button styling */
-button{
+
+/* Botones */
+button {
     flex: 1;
     padding: 0;
     margin: 0;
     background-color: transparent;
     border: 0;
-    width: 5vw;
+    width: 64px;
     cursor: pointer;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     aspect-ratio: 1/1;
-    text-align: center;
-    
-    box-sizing: border-box;
+    font-size: 1.42vw;
     background-image: var(--button-bg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.42vw;
-    
+    background-size: 64px;
+    box-sizing: border-box;
 }
-.pomo.container *{
-    text-shadow: #f4e0d4 0px 2px 0px;
-}
-u{
+
+
+u, ul li {
     text-shadow: none !important;
 }
-ul li{
-    list-style:square;
-    text-shadow: none;
+
+ul li {
+    list-style: square;
 }
-
-/* Responsive adjustments */
-
+span{
+    margin-top: 48px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+/* Responsive */
 @media (max-width: 1100px) {
-    .pomo-page{
+    .pomo-page {
         width: 50vw;
     }
-    .pomo.container h1{
+
+    .pomo.container h1 {
         font-size: 2.5vw;
     }
     
-    #pomo-timer h2{
+    #pomo-timer h2 {
         font-size: 3vw !important;
     }
 
     button {
-        padding: 0.8rem; /* Ajusta para dispositivos móviles */
         font-size: 2rem;
         width: 7vw;
     }
 }
-.desk-item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+
 @media (max-width: 800px) {
-    body{
+    body {
         flex-direction: column;
     }
-    iframe{
+
+    iframe {
         height: 340px !important;
     }
 }
-@media (max-width: 680px){
 
-    .pomo-page{
+/* @media (max-width: 680px) {
+    .pomo-page {
         width: 75vw;
     }
-    .pomo.container h1{
+
+    .pomo.container h1 {
         font-size: 3.5vw;
     }
-    #pomo-timer h2{
+
+    #pomo-timer h2 {
         font-size: 4.5vw !important;
     }
 
     button {
-        padding: 0.8rem; /* Ajusta para dispositivos móviles */
-        font-size: 0.875rem;
+        font-size: 6vw;
         width: 12vw;
-        font-size: 6vw;
     }
-}
-@media (max-width: 478px){
-    .pomo-page{
-        width: 90vw !important;
-    }
-    .pomo.container h1{
-        font-size: 6.2vw;
-    }
-    #pomo-timer h2{
-        font-size: 6.4vw !important;
-    }
+} */
 
-    button {
-        padding: 0.8rem; /* Ajusta para dispositivos móviles */
-        font-size: 0.875rem;
-        width: 14vw;
-        font-size: 6vw;
-    }
-}
