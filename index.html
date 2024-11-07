@@ -14,32 +14,53 @@
 <body>
     <!-- Timer Page -->
     <div class="desk-container">
-                <section class="pomo-container">
-                    <div class="pomo-header">
+
+                <section class="container">
+                    <div class="header">
                         <h1>Pomodoro</h1>
                     </div>
                     <div class="timer-box">
                         <div id="pomo-timer"></div>
                         <div id="pomo-btn-box">
-                            <button id="decr-btn" aria-label="decrease timer">-</button>
-                            <button id="pomo-button" aria-label="start timer">⏵</button>
+                            <button id="decr-btn" aria-label="decrease timer">
+                            <img src="assets/img/play-btn.webp" alt="" srcset="" width="50%">
+                            </button>
+                            <button id="pomo-button" aria-label="start timer">
+                            <img src="assets/img/restart-btn.webp" alt="" srcset="" width="50%">
+                            </button>
                             <button id="incr-btn" aria-label="increase timer">+</button>
+                            <button id="settings-btn" aria-label="increase timer">
+                                <img src="assets/img/settings-btn.webp" alt="" srcset="" width="50%">
+                            </button>
                         </div>
                     </div>
                     <span id="break-preview"></span>
                 </section>
-        
             <!-- Tasks Page -->
-            <div class="modal spotify-embed">
-                <iframe style="border-radius:12px; margin-top: 1.6rem;" src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator" width="auto" height="auto" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
+            <section class="container">
+                <div class="header">
+                    <h1>Pomodoro</h1>
+                </div>
+                <div class="timer-box">
+                    <div id="pomo-timer"></div>
+                    <div id="pomo-btn-box">
+                        <button id="decr-btn" aria-label="decrease timer">-</button>
+                        <button id="pomo-button" aria-label="start timer">⏵</button>
+                        <button id="incr-btn" aria-label="increase timer">+</button>
+                    </div>
+                </div>
+                <span id="break-preview"></span>
+            </section>
+    </div>
+    <div class="modal spotify-embed">
+        <iframe style="border-radius:12px; margin-top: 1.6rem;" src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator" width="auto" height="auto" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     <script>
         gsap.registerPlugin(Draggable);
-        Draggable.create(".pomo-container",{
+        Draggable.create(".container",{
             intertia: true,
             allowEventDefault: true,
-            handle: ".pomo-header"
+            handle: ".header"
         })
     </script>
     <script src="./js/script.js" defer></script>

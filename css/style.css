@@ -20,10 +20,10 @@
     font-family: var(--font-primary) !important;
     -webkit-tap-highlight-color: transparent;
     box-sizing: border-box;
+    text-rendering: geometricPrecision;
 }
 
 html, body {
-    height: 100%;
     margin: 0;
 }
 
@@ -36,7 +36,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100%;
+    height: 100%;
 
     margin: 2%;
 }
@@ -51,14 +51,14 @@ h1, h2, button {
 
 .desk-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     filter: drop-shadow(0 4px 16px var(--color-shadow));
 }
 
 /* Contenedores */
-.pomo-container {
+.container {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -74,13 +74,13 @@ h1, h2, button {
     filter: drop-shadow(0 4px 12px);
     padding: 32px;
 }
-.pomo-container *{
+.container *{
     text-shadow: #f4e0d4 0px 2px 0px;
 }
 
 
 /* Texto en contenedores */
-.pomo.container h1 {
+.container h1 {
     font-size: 1.44vw;
 }
 
@@ -92,7 +92,7 @@ h1, h2, button {
 #pomo-btn-box {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 /* Botones */
@@ -102,7 +102,7 @@ button {
     margin: 0;
     background-color: transparent;
     border: 0;
-    width: 64px;
+    width: 4.8vw;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -113,7 +113,10 @@ button {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 64px;
-    box-sizing: border-box;
+    box-sizing: border- box;
+}
+button img{
+    filter: invert(1) drop-shadow(0px 2px 0px #f4e0d4);
 }
 
 
@@ -129,24 +132,6 @@ span{
     display: flex; flex-direction: column; justify-content: center; align-items: center;
 }
 /* Responsive */
-@media (max-width: 1100px) {
-    .pomo-page {
-        width: 50vw;
-    }
-
-    .pomo.container h1 {
-        font-size: 2.5vw;
-    }
-    
-    #pomo-timer h2 {
-        font-size: 3vw !important;
-    }
-
-    button {
-        font-size: 2rem;
-        width: 7vw;
-    }
-}
 
 @media (max-width: 800px) {
     body {
@@ -158,16 +143,16 @@ span{
     }
 }
 
-/* @media (max-width: 680px) {
-    .pomo-page {
+@media (max-width: 680px) {
+    .container {
         width: 75vw;
     }
 
-    .pomo.container h1 {
+    .container h1 {
         font-size: 3.5vw;
     }
 
-    #pomo-timer h2 {
+    #timer h2 {
         font-size: 4.5vw !important;
     }
 
@@ -175,5 +160,24 @@ span{
         font-size: 6vw;
         width: 12vw;
     }
-} */
+}
+
+@media (max-width: 478px){
+    .container{
+        width: 90vw !important;
+    }
+    .container h1{
+        font-size: 6.2vw;
+    }
+    #pomo-timer h2{
+        font-size: 6.4vw !important;
+    }
+
+    button {
+        padding: 0.8rem; /* Ajusta para dispositivos móviles */
+        font-size: 0.875rem;
+        width: 14vw;
+        font-size: 6vw;
+    }
+}
 
