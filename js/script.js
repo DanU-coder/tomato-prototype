@@ -6,9 +6,11 @@ const tenSeg = new Audio("./assets/sounds/10-seg.mp3");
 const pomoCounter = document.getElementById("pomo-timer");
 const nxtTimePreview = document.getElementById("break-preview");
 const pomoButton = document.getElementById("pomo-button"); 
-const decreaseBtn = document.getElementById("decr-btn");
-const increaseBtn = document.getElementById("incr-btn");
-
+const decreaseBtn = document.getElementById("pomo-decrease");
+const increaseBtn = document.getElementById("pomo-increase");
+const nxtPageBtn = document.querySelectorAll(".nxt-page");
+const pageOne = document.getElementById("page-1")
+const pageTwo = document.getElementById("page-2")
 
 let counter = 0;
 let workMinutes = 25; // Duración de trabajo
@@ -22,6 +24,7 @@ let isRunning = false; // Para saber si el temporizador está en ejecución
 let isBreak = false; // Para saber si estamos en tiempo de descanso
 let ifPaused = false;
 let comment;
+let pageDisplay = true
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -32,9 +35,36 @@ buttons.forEach(button => {
 
 
 
+nxtPageBtn.forEach(nxtPageBtn =>{
+    nxtPageBtn.addEventListener("click", () =>{
+        if(pageDisplay || !pageDisplay){
+            pageDisplay = !pageDisplay
+            if(pageDisplay == true){
+                pageOne.style.display = "block"
+                pageTwo.style.display = "none"
+            }else if (pageDisplay == false){
+                pageOne.style.display = "none"
+                pageTwo.style.display = "block"
+            }
+        }
+    })
+})
+
+
+
+
 //Cambio de Página
 
 
+nxtPageBtn.forEach(nxtPageBtn => {
+    const bgOriginal = nxtPageBtn.style.backgroundImage;
+    nxtPageBtn.addEventListener("mouseenter", () => {
+        nxtPageBtn.style.backgroundImage = "url('./assets/img/nxt-page-hover.png')";
+    });
+    nxtPageBtn.addEventListener("mouseleave", () => {
+        nxtPageBtn.style.backgroundImage = bgOriginal;
+    });
+});
 
 const updateDisplay = () => {
     let formattedMinutes = String(isBreak ? breakMinutes : workMinutes).padStart(2, '0');
